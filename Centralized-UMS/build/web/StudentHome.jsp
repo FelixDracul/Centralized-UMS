@@ -20,11 +20,21 @@
         %>
         
         <div>
-            <h1>Welcome, $(username)!</h1>
-            <br>
-            <br>
+            <h1>Welcome,<%= session.getAttribute("username") %></h1>
+            <br><br>
             <form name="logout" action="Logout" method="POST">
                 <input type="submit" value="Logout" name="logout" />
+            </form>
+            <br><br><br>
+            <!--<form action="AddQuery" method="POST">
+                <input type="text" name="query" value="" />
+                <input type="submit" value="Submit" name="submit" />
+            </form>-->
+            
+            <form action="FileUpload" method="POST" enctype="multipart/form-data">
+                Select Project File: &nbsp;
+                <input type="file" name="file" value="" /> <br><br>
+                <input type="submit" value="Upload" name="upload" />                
             </form>
         </div>
     </body>
